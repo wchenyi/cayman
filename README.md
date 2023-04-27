@@ -12,15 +12,15 @@
 
 # 目录
 
-> [修改简介](#%E4%BF%AE%E6%94%B9%E7%AE%80%E4%BB%8B)<br>
-> [修改内容](#%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9)<br>
-> [修改方法](#%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95)
+> [一、修改简介](#%E4%BF%AE%E6%94%B9%E7%AE%80%E4%BB%8B)<br>
+> [二、修改内容](#%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9)<br>
+> [三、修改方法](#%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95)
 
-# 修改简介
+# 一、修改简介
 
 本站以Jekyll的[Cayman](https://github.com/pages-themes/cayman)主题为基础，深度定制了本站主题，并不适合其他人用作自己的*jekyll*主题，如需使用还请使用[原版](https://github.com/pages-themes/cayman)。在这里说出修改的部分，但请注意本人并非系统训练过的开发者，所以在专业词汇和内容上可能不够精确或者完全不对，请大佬们多多包涵。
 
-# 修改内容
+# 二、修改内容
 
 - 修改原来的标头按钮，增加数量并赋予绝对链接<br>
 - 将原本的单页布局改为类似于博客那种层层嵌套<br>
@@ -28,7 +28,7 @@
 - 增加可选功能添加
 - ……
 
-# 修改方法
+# 三、修改方法
 
 这里所写明的是针对原版主题[Cayman](https://github.com/pages-themes/cayman)的个性化修改内容，为了便于修改，我删掉了原本的[README](https://github.com/pages-themes/cayman#readme)。重写了自己需要的修改部分，想要查看原文档的请去看原本的仓库。本主题只为本人的一个项目[Wall](https://wangcy.tk/wall)做深度定制，所以不适合其他人直接配使用，如果你对本站的修改模式和成品效果感兴趣的话可以自行按照本站所提供的基础和方法修改出您想要的页面主题。<br>
 在这里对原作者表示衷心的敬佩和感谢，如果本文内容有侵权或者其他违规内容，请联系本人，本人会在第一时间进行删除，并作出道歉。
@@ -42,7 +42,7 @@ remote_theme: wchenyi/cayman
  ```
  
 ## 2.主题基础配置：
-这部分是Jekyll等原主题支持的配置
+这部分是Jekyll等原主题支持的配置规范和本人（计算机小白）在操作的过程中的心得
 
 ### ① 配置变量
 本主题支持以下变量，只需要在您的网站的```_config.yml```中进行下列配置：
@@ -50,11 +50,16 @@ remote_theme: wchenyi/cayman
 title: [The title of your site]
 description: [A short description of your site's purpose]
 ```
+> 如果不添加以上信息，在页面显示上：<br>
+> **主页:** 使用仓库名作为标题，使用仓库描述作为页面标题下方的描述<br>
+> **其他页面:** 使用页面一集标题作为页面标题，使用仓库描述作为页面标题下方的描述
+
 此外，您可以选择设置以下可选变量：
 ```yml
 show_downloads: ["true" or "false" (unquoted) to indicate whether to provide a download URL]
 google_analytics: [Your Google Analytics tracking ID]
 ```
+> 我将```show_downloads```原本用来下载仓库的zip选项换成了```空位```，如有需要可自行更改
 
 ### ③ 样式表
 如果您想添加自己的自定义样式：
