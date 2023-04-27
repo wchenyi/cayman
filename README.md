@@ -78,10 +78,10 @@ google_analytics: [Your Google Analytics tracking ID]
 4. 粘贴第一步中复制的默认布局内容
 5. 根据需要自定义布局
 
-### 自定义谷歌分析代码
+### ④ 自定义谷歌分析代码
 自此主题首次创建以来，Google多年来已经发布了其Google Analytics代码的几次迭代。如果您想利用最新的代码，请将其粘贴到您的 Jekyll 网站中。```_includes/head-custom-google-analytics.html```
 
-### 覆盖 GitHub 生成的网址
+### ⑤ 覆盖 GitHub 生成的网址
 模板通常依赖于 GitHub 提供的 URL，例如指向存储库的链接或用于下载项目的链接。如果您想覆盖一个或多个默认网址：
 
 1. 查看[模板源](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html)以确定变量的名称。它将采用 ```.{{ site.github.zip_url }}```
