@@ -25,6 +25,7 @@
 - 修改原来的标头按钮，增加数量并赋予绝对链接<br>
 - 将原本的单页布局改为类似于博客那种层层嵌套<br>
 - 取消了对于本来GIthub的链接，增加了页面logo<br>
+- 增加了Clarity页面分析与追踪功能<br>
 - 增加可选功能添加
 - ……
 
@@ -61,7 +62,7 @@ google_analytics: [Your Google Analytics tracking ID]
 ```
 > 我将```show_downloads```原本用来下载仓库的zip选项换成了```空位```，如有需要可自行更改
 
-### ③ 样式表
+### ② 样式表
 如果您想添加自己的自定义样式：
 1. 创建在站点中调用的文件```/assets/css/style.scss```
 2. 将以下内容添加到文件顶部，如下所示：
@@ -83,8 +84,11 @@ google_analytics: [Your Google Analytics tracking ID]
 4. 粘贴第一步中复制的默认布局内容
 5. 根据需要自定义布局
 
-### ④ 自定义谷歌分析代码
+### ④ 自定义分析代码
+1. 谷歌分析代码
 自此主题首次创建以来，Google多年来已经发布了其Google Analytics代码的几次迭代。如果您想利用最新的代码，请将其粘贴到您的 Jekyll 网站中。```_includes/head-custom-google-analytics.html```
+2. 微软分析代码
+在```_indludes```目录增加了```clarity-tracking。html```页面，里面放入<u>clarity跟踪代码</u>，在```_layouts```目录的```default.html```文件中加入响应代码
 
 ### ⑤ 覆盖 GitHub 生成的网址
 模板通常依赖于 GitHub 提供的 URL，例如指向存储库的链接或用于下载项目的链接。如果您想覆盖一个或多个默认网址：
