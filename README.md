@@ -90,7 +90,7 @@ google_analytics: [Your Google Analytics tracking ID]
 2. 微软分析代码
 - 创建过程
 (1)在```_indludes```目录增加了```clarity-tracking。html```页面，里面放入clarity跟踪代码:
-```
+```javascript
 {% if site.clarity_tracking %}
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -102,14 +102,16 @@ google_analytics: [Your Google Analytics tracking ID]
 {% endif %}
 ```
 (2)将其添加到同目录下```head-custom.html```:
-```
+```html
 <!-- Setup Clarity tracking -->
 {% include clarity-tracking.html %}
 ```
 (3)在```_layouts```目录的```default.html```文件中加入跟踪代码，如```default.html```的``` </head>``` 标签之前添加以下代码行：
-```{% include clarity-tracking.html %}```
-(4)在使用该主题的```_config.yml```添加如下代码：
+```html
+{% include clarity-tracking.html %}
 ```
+(4)在使用该主题的```_config.yml```添加如下代码：
+```yml
 clarity_tracking: 10位id
 ```
 
