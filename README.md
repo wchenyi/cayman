@@ -88,7 +88,30 @@ google_analytics: [Your Google Analytics tracking ID]
 1. 谷歌分析代码
 自此主题首次创建以来，Google多年来已经发布了其Google Analytics代码的几次迭代。如果您想利用最新的代码，请将其粘贴到您的 Jekyll 网站中。```_includes/head-custom-google-analytics.html```
 2. 微软分析代码
-在```_indludes```目录增加了```clarity-tracking。html```页面，里面放入<u>clarity跟踪代码</u>，在```_layouts```目录的```default.html```文件中加入响应代码
+- 创建过程
+(1)在```_indludes```目录增加了```clarity-tracking。html```页面，里面放入clarity跟踪代码:
+```
+{% if site.clarity_tracking %}
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "10位id");
+</script>
+{% endif %}
+```
+(2)将其添加到同目录下```head-custom.html```:
+```
+<!-- Setup Clarity tracking -->
+{% include clarity-tracking.html %}
+```
+(3)在```_layouts```目录的```default.html```文件中加入跟踪代码，如```default.html```的``` </head>``` 标签之前添加以下代码行：
+```{% include clarity-tracking.html %}```
+(4)在使用该主题的```_config.yml```添加如下代码：
+```
+clarity_tracking: 10位id
+```
 
 ### ⑤ 覆盖 GitHub 生成的网址
 模板通常依赖于 GitHub 提供的 URL，例如指向存储库的链接或用于下载项目的链接。如果您想覆盖一个或多个默认网址：
