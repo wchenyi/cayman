@@ -154,7 +154,7 @@ github:
 ```
   - 在```_includes```文件选择```head-custom.html```在```<head>```字段增加```<!-- You can set your favicon here -->```下面的内容
 
-### ② 增加深色模式切换(页面反色)
+### ② 增加深色模式切换(页面反色-弃案❌)
   - 在```layout```文件增加了深色模式切换选项（颜色反转，不习惯的不要使用）
 ```html
 <!--深色模式-->
@@ -177,4 +177,48 @@ github:
        document.body.innerHTML=Source;
       }
     </script>
+```
+### ③ 深色模式🌓
+1️⃣根目录下创建一个新的文件夹，名为 ```assets/js```，然后在其中创建一个新文件 ```dark-mode-switch.js```
+2️⃣修改CSS，在```_sass/jekyll-theme-cayman.scss``` 文件中。您可以在文件末尾添加以下CSS：
+```css
+// 检查用户之前的主题偏好
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme == "dark" || (prefersDarkScheme.matches && !currentTheme)) {
+    document.body.classList.toggle("dark-theme");
+    document.querySelector("#dark-mode-toggle").textContent = "☀️";
+}
+
+function toggleDarkMode() {
+    const darkModeToggle = document.querySelector("#dark-mode-toggle");
+    document.body.classList.toggle("dark-theme");
+    
+    if (document.body.classList.contains("dark-theme")) {
+        localStorage.setItem("theme", "dark");
+        darkModeToggle.textContent = "☀️";
+    } else {
+        localStorage.setItem("theme", "light");
+        darkModeToggle.textContent = "🌙";
+    }
+}
+
+// 当页面加载完成后添加事件监听器
+document.addEventListener("DOMContentLoaded", function() {
+    const darkModeToggle = document.querySelector("#dark-mode-toggle");
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", toggleDarkMode);
+    }
+});
+```
+3️⃣修改布局文件,在主布局文件```_layouts/default.html```。在 </body> 标签之前添加以下代码：
+```html
+<button id="dark-mode-toggle">🌙</button>
+<script src="{{ '/assets/js/dark-mode-switch.js' | relative_url }}"></script>
+```
+4️⃣更新 ```_config.yml```，确保```_config.yml``` 文件中包含以下行，以允许自定义JavaScript文件：
+```yaml
+include:
+  - assets/js
 ```
