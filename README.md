@@ -181,8 +181,8 @@ github:
     </script>
 ```
 ### ③ 深色模式🌓
-1️⃣根目录下创建一个新的文件夹，名为 ```assets/js```，然后在其中创建一个新文件 ```dark-mode-switch.js```
-2️⃣修改CSS，在```_sass/jekyll-theme-cayman.scss``` 文件中。您可以在文件末尾添加以下CSS：
+1️⃣ 根目录下创建一个新的文件夹，名为 ```assets/js```，然后在其中创建一个新文件 ```dark-mode-switch.js```
+2️⃣ 修改CSS，在```_sass/jekyll-theme-cayman.scss``` 文件中。您可以在文件末尾添加以下CSS：
 ```css
 // 检查用户之前的主题偏好
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -214,12 +214,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 ```
-3️⃣修改布局文件,在主布局文件```_layouts/default.html```。在 </body> 标签之前添加以下代码：
+3️⃣ 修改布局文件,在主布局文件```_layouts/default.html```。在 </body> 标签之前添加以下代码：
 ```html
 <button id="dark-mode-toggle">🌙</button>
 <script src="{{ '/assets/js/dark-mode-switch.js' | relative_url }}"></script>
 ```
-4️⃣更新 ```_config.yml```，确保```_config.yml``` 文件中包含以下行，以允许自定义JavaScript文件：
+4️⃣ 更新 ```_config.yml```，确保```_config.yml``` 文件中包含以下行，以允许自定义JavaScript文件：
 ```yaml
 include:
   - assets/js
