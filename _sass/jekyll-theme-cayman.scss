@@ -376,3 +376,59 @@ a {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
+
+/* 深色模式样式 */
+body.dark-theme {
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+}
+
+body.dark-theme .page-header {
+    background-color: #1b1b1b;
+    background-image: linear-gradient(120deg, #155799, #159957);
+}
+
+body.dark-theme .main-content h1,
+body.dark-theme .main-content h2,
+body.dark-theme .main-content h3,
+body.dark-theme .main-content h4,
+body.dark-theme .main-content h5,
+body.dark-theme .main-content h6 {
+    color: #63c0f5;
+}
+
+body.dark-theme a {
+    color: #63c0f5;
+}
+
+/* 深色模式切换按钮样式 */
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #159957;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #157f47;
+}
+
+@media screen and (max-width: 42em) {
+    #dark-mode-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
