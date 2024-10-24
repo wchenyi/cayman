@@ -474,18 +474,6 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease, background-image 0.3s ease;
 }
 
-@media screen and (max-width: 42em) {
-    .theme-toggle {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .theme-toggle .icon {
-        width: 20px;
-        height: 20px;
-    }
-}
-
 /* 返回顶部按钮样式 */
 .back-to-top {
     position: fixed;
