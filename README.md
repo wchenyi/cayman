@@ -139,4 +139,5 @@ github:
   - 在```layout```文件中选择```default.html```修改```<footer class="site-footer">```字段
   
 ## 4.其他修改（自选添加）
+可根据需要在```default.html```中添加到```<head></head>```中间的任意不干扰其他元素的位置
 > 见自选文件夹
