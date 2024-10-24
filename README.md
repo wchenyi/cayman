@@ -181,7 +181,7 @@ github:
     </script>
 ```
 ### ③ 深色模式🌓
-1️⃣ 根目录下创建一个新的文件夹，名为 ```assets/js```，然后在其中创建一个新文件 ```dark-mode-switch.js```
+1️⃣ 根目录下创建一个新的文件夹，名为 ```assets/js```，然后在其中创建一个新文件 ```dark-mode-switch.js```<br>
 2️⃣ 修改CSS，在```_sass/jekyll-theme-cayman.scss``` 文件中。您可以在文件末尾添加以下CSS：
 ```css
 // 检查用户之前的主题偏好
