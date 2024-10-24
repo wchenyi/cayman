@@ -461,6 +461,171 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease, background-image 0.3s ease;
 }
 
+/* 返回顶部按钮样式 */
+.back-to-top {
+    position: fixed;
+    bottom: 80px; /* 位于深色模式切换按钮上方 */
+    right: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+}
+
+.back-to-top .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    stroke: #159957;
+}
+
+/* 搜索按钮和面板样式 */
+.search-button {
+    position: fixed;
+    bottom: 140px; /* 位于返回顶部按钮上方 */
+    right: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+.search-button .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    stroke: #159957;
+}
+
+.search-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    padding: 20px;
+}
+
+.search-panel.active {
+    right: 0;
+}
+
+.search-panel input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.search-results {
+    max-height: calc(100% - 100px);
+    overflow-y: auto;
+}
+
+.search-result-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.close-search {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 深色模式适配 */
+body.dark-theme .back-to-top,
+body.dark-theme .search-button {
+    background-color: #2b2b2b;
+}
+
+body.dark-theme .back-to-top .icon,
+body.dark-theme .search-button .icon {
+    stroke: #ffffff;
+}
+
+body.dark-theme .search-panel {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+body.dark-theme .search-panel input {
+    background-color: #3b3b3b;
+    color: #ffffff;
+    border-color: #4b4b4b;
+}
+
+body.dark-theme .search-result-item {
+    border-bottom-color: #3b3b3b;
+}
+
+body.dark-theme .search-result-item:hover {
+    background-color: #3b3b3b;
+}
+
+@media screen and (max-width: 42em) {
+    .back-to-top,
+    .search-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .back-to-top .icon,
+    .search-button .icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .search-panel {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 42em) {
     .theme-toggle {
         width: 40px;
