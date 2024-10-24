@@ -1,7 +1,7 @@
 /* 返回顶部按钮样式 */
 .back-to-top {
     position: fixed;
-    bottom: 80px; /* 位于深色模式切换按钮上方 */
+    bottom: 80px;
     right: 20px;
     background-color: #ffffff;
     border: none;
@@ -38,7 +38,7 @@
 /* 搜索按钮和面板样式 */
 .search-button {
     position: fixed;
-    bottom: 140px; /* 位于返回顶部按钮上方 */
+    bottom: 140px;
     right: 20px;
     background-color: #ffffff;
     border: none;
@@ -113,36 +113,6 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
-}
-
-/* 深色模式适配 */
-body.dark-theme .back-to-top,
-body.dark-theme .search-button {
-    background-color: #2b2b2b;
-}
-
-body.dark-theme .back-to-top .icon,
-body.dark-theme .search-button .icon {
-    stroke: #ffffff;
-}
-
-body.dark-theme .search-panel {
-    background-color: #2b2b2b;
-    color: #ffffff;
-}
-
-body.dark-theme .search-panel input {
-    background-color: #3b3b3b;
-    color: #ffffff;
-    border-color: #4b4b4b;
-}
-
-body.dark-theme .search-result-item {
-    border-bottom-color: #3b3b3b;
-}
-
-body.dark-theme .search-result-item:hover {
-    background-color: #3b3b3b;
 }
 
 @media screen and (max-width: 42em) {
