@@ -19,9 +19,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
-  {% include buttons.html %}
-<link rel="stylesheet" href="{{ '/assets/css/custom-buttons.css' | relative_url }}">
-<script src="{{ '/assets/js/buttons.js' | relative_url }}"></script>
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
@@ -58,5 +55,8 @@
   <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 <script src="{{ '/assets/js/dark-mode-switch.js' | relative_url }}"></script>
+  {% include buttons.html %}
+<link rel="stylesheet" href="{{ '/assets/css/custom-buttons.css' | relative_url }}">
+<script src="{{ '/assets/js/buttons.js' | relative_url }}"></script>
   </body>
 </html>
