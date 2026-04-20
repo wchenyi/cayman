@@ -6,18 +6,33 @@
 </button>
 
 
- <!-- 搜索按钮 【已废弃】-->
-<!--<button class="search-button" aria-label="Search">
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-    </svg>
-</button>-->
+<!-- 新版搜索触发按钮 -->
+<button id="search-trigger" class="search-trigger">
+  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle>
+    <path d="m21 21-4.35-4.35"></path>
+  </svg>
+  <span class="search-text">搜索</span>
+  <span class="shortcut">Ctrl+K</span>
+</button>
 
-<!-- 搜索面板 【已废弃】 -->
-<!--<div class="search-panel">
-    <button class="close-search" aria-label="Close Search">❌</button>
-    <input type="text" class="search-input" placeholder="搜索...">
-    <div class="search-results"></div>
-</div>-->
+<!-- 新版搜索模态框 -->
+<div id="search-modal" class="search-modal">
+  <div class="search-container">
+    <div class="search-header">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+      <input type="text" id="search-input" placeholder="搜索文章、页面..." autocomplete="off" />
+      <button id="search-close" class="search-close">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div id="search-results"></div>
+  </div>
+</div>
 
