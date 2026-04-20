@@ -15,68 +15,68 @@ function scrollToTop() {
     });
 }
 
-// 搜索功能
-class PageSearcher {
-    constructor() {
-        this.searchIndex = [];
-        this.buildSearchIndex();
-    }
+// // 搜索功能
+// //class PageSearcher {
+//     constructor() {
+//         this.searchIndex = [];
+//         this.buildSearchIndex();
+//     }
 
-    async buildSearchIndex() {
-        // 获取当前页面内容
-        const mainContent = document.querySelector('.main-content');
-        if (mainContent) {
-            this.addToIndex(window.location.pathname, mainContent.textContent);
-        }
-    }
+//     async buildSearchIndex() {
+//         // 获取当前页面内容
+//         const mainContent = document.querySelector('.main-content');
+//         if (mainContent) {
+//             this.addToIndex(window.location.pathname, mainContent.textContent);
+//         }
+//     }
 
-    addToIndex(url, content) {
-        this.searchIndex.push({
-            url: url,
-            content: content.toLowerCase(),
-            title: document.title
-        });
-    }
+//     addToIndex(url, content) {
+//         this.searchIndex.push({
+//             url: url,
+//             content: content.toLowerCase(),
+//             title: document.title
+//         });
+//     }
 
-    search(query) {
-        const results = [];
-        const searchTerms = query.toLowerCase().split(' ');
+//     search(query) {
+//         const results = [];
+//         const searchTerms = query.toLowerCase().split(' ');
         
-        this.searchIndex.forEach(page => {
-            let matches = true;
-            searchTerms.forEach(term => {
-                if (!page.content.includes(term)) {
-                    matches = false;
-                }
-            });
+//         this.searchIndex.forEach(page => {
+//             let matches = true;
+//             searchTerms.forEach(term => {
+//                 if (!page.content.includes(term)) {
+//                     matches = false;
+//                 }
+//             });
             
-            if (matches) {
-                const context = this.getSearchContext(page.content, searchTerms[0]);
-                results.push({
-                    title: page.title,
-                    url: page.url,
-                    context: context
-                });
-            }
-        });
+//             if (matches) {
+//                 const context = this.getSearchContext(page.content, searchTerms[0]);
+//                 results.push({
+//                     title: page.title,
+//                     url: page.url,
+//                     context: context
+//                 });
+//             }
+//         });
         
-        return results;
-    }
+//         return results;
+//     }
 
-    getSearchContext(content, term) {
-        const index = content.indexOf(term);
-        const start = Math.max(0, index - 50);
-        const end = Math.min(content.length, index + 100);
-        return '...' + content.slice(start, end).replace(/\s+/g, ' ') + '...';
-    }
-}
+//     getSearchContext(content, term) {
+//         const index = content.indexOf(term);
+//         const start = Math.max(0, index - 50);
+//         const end = Math.min(content.length, index + 100);
+//         return '...' + content.slice(start, end).replace(/\s+/g, ' ') + '...';
+//     }
+// }
 
-// 初始化
-document.addEventListener('DOMContentLoaded', function() {
-    const searcher = new PageSearcher();
-    const searchPanel = document.querySelector('.search-panel');
-    const searchInput = document.querySelector('.search-input');
-    const searchResults = document.querySelector('.search-results');
+// // 初始化
+// document.addEventListener('DOMContentLoaded', function() {
+//     const searcher = new PageSearcher();
+//     const searchPanel = document.querySelector('.search-panel');
+//     const searchInput = document.querySelector('.search-input');
+//     const searchResults = document.querySelector('.search-results');
     
     // 监听滚动事件
     window.addEventListener('scroll', handleScroll);
